@@ -1,0 +1,71 @@
+import 'package:flutter/material.dart';
+
+// Application entry point
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'My Study planner',
+
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('My Study Planner'),
+          backgroundColor: const Color.fromARGB(220, 111, 82, 255),
+          foregroundColor: Colors.white,
+        ),
+        body: ListView(
+          padding: const EdgeInsets.all(16),
+          children: const [
+            Text(
+              'my study goals',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 15),
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.menu_book),
+                title: Text('database'),
+                subtitle: Text('3 hours'),
+              ),
+            ),
+
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.computer),
+                title: Text('networking'),
+                subtitle: Text('2 hours'),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.code),
+                title: Text('programming'),
+                subtitle: Text('4 hours'),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.code),
+                title: Text('advanced programming'),
+                subtitle: Text('5 hours'),
+              ),
+            ),
+          ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            print('Button clicked!');
+          },
+          child: const Icon(Icons.add),
+        ),
+      ),
+    );
+  }
+}
